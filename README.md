@@ -14,28 +14,31 @@ This is a modern React application built with TypeScript, Vitest for unit testin
 To run the project locally, follow these steps:
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/my-react-app.git
-   cd my-react-app
-  ```
+    ```bash
+    git clone https://github.com/yourusername/my-react-app.git
+    cd my-react-app
+    ```
+ 
 2. Install dependencies:
-  ```bash
-  npm install
-
-  ```
+    ```bash
+    npm install
+    ```
+ 
 3. Start the development server
-  ```bash
-  npm run dev
-  ```
+    ```bash
+    npm run dev
+    ```
+  
 4. Open your browser and go to http://localhost:5173/
 
 ## Testing
 
 This project uses Vitest for testing the React components and logic. To run the tests:
 
-```bash
+bash```
 npm run test
 ```
+
 The tests will run in watch mode, so any changes to your code will trigger the tests automatically.
 
 ## CI/CD
