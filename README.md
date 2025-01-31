@@ -35,7 +35,7 @@ To run the project locally, follow these steps:
 
 This project uses Vitest for testing the React components and logic. To run the tests:
 
-bash```
+```bash
 npm run test
 ```
 
