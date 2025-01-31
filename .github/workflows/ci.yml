@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Check code format
-        run: npx prettier . --write
+        run: npm run prettier
 
   test:
     name: 🧪 Run Tests
