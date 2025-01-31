@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# Hello World React App with CI/CD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern React application built with TypeScript, Vitest for unit testing, and CI/CD pipelines configured with GitHub Actions. The app is deployed continuously to AWS Amplify, ensuring that the latest changes are always live.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React + TypeScript**: A powerful, type-safe framework for building modern web applications.
+- **Vitest**: A fast unit testing framework integrated into the app for testing the components and logic.
+- **CI/CD with GitHub Actions**: Automates testing, building, and deployment processes.
+- **AWS Amplify**: Continuous deployment setup for automatic production deployment every time changes are pushed to the repository.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run the project locally, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/my-react-app.git
+   cd my-react-app
+  ```
+2. Install dependencies:
+  ```bash
+  npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+  ```
+3. Start the development server
+  ```bash
+  npm run dev
+  ```
+4. Open your browser and go to http://localhost:5173/
+
+## Testing
+
+This project uses Vitest for testing the React components and logic. To run the tests:
+
+```bash
+npm run test
 ```
+The tests will run in watch mode, so any changes to your code will trigger the tests automatically.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## CI/CD
+The project is configured with GitHub Actions for continuous integration and continuous deployment (CI/CD). The workflow is triggered on every push to the repository, ensuring that tests are run, the build is created, and the application is deployed automatically.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## GitHub Actions Workflow
+- Test & Build: Every push to the main branch runs tests and builds the app.
+- Deploy to AWS Amplify: Upon successful tests and build, the app is automatically deployed to AWS Amplify.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## CI/CD Pipeline Overview
+1. Push changes to the GitHub repository (e.g., main branch).
+2. GitHub Actions runs the test suite using Vitest.
+3. If tests pass, GitHub Actions builds the app.
+4. AWS Amplify automatically deploys the built app to production.
